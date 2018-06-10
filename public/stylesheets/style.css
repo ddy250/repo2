@@ -1,0 +1,69 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+p{
+    color: #70808e;
+}
+
+h3{
+    color: black;
+}
+
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    border:solid #ededed;
+    border-width: 5px 10px;
+}
+.div.a{
+    position: absolute;
+    right: 100px;
+
+}
+
+.person {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-right: 120px;
+}
+
+.person> div {
+    padding: 20px;
+}
+
+.person> div> img{
+    border-radius: 50%;
+}
+.person >div>p>a{
+    color: #70808e;
+    text-decoration: none;
+}
+/* Sidebar/right column */
+.company {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: 10px 10px 10px 0px;
+}
+
+.company> div {
+    padding: 20px;
+}
+.company >div>p>a{
+    color: #0090e0;
+    text-decoration: none;
+}
+li{
+
+    display: inline;
+}
+
+
+span{
+    display:inline;
+}
+
