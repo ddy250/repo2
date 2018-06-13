@@ -1,39 +1,45 @@
 extends layout
 
 block content
-  .row
-    .person
-      .div
-          img(src=c[0].profileImageURL, alt='Flowers in Chania', width='100', height='100')
-      .div
-          h3 #{c[0].name}
-          p #{c[0].title}
-          p
-              a(href='tel:' + c[0].phone, target='_blank') Phone (Direct)
-              span.
-                  &nbsp | &nbsp
-              a(href='mailto:' + c[0].email, target='_blank') Email
-    .company
-      .div
-          img(src=c[0].companyLogo, alt='Flowers in Chania', width='100', height='100')
-      .div
-         p
-             a(href='http://' + c[0].companyDomain, target='_blank') #{c[0].companyName}
-             span.
-                 &nbsp | city,country
-         -var n = 0
-         each val in c[0].industry[n]
-            b #{c[0].industry[n++]}&nbsp
-         if ( c[0].companyEmployees || c[0].companyRevenue)
-             if ( c[0].companyEmployees && c[0].companyRevenue)
-                 p #{c[0].companyEmployees} Employees | Revenue #{c[0].companyRevenue}
-             else if  (c[0].companyEmployees)
-                 p #{c[0].companyEmployees} Employees
-             else if (c[0].companyRevenue)
-                 p Revenue #{c[0].companyRevenue}
-    .div.a
-      p #{c[0].lastUpdatedDate}
-
+    -var x;
+    -for (x in c){
+        .row
+            .person
+                .div
+                    img(src=c[x].profileImageURL, width='100', height='100', alt='Image not found', onerror="this.src='images/person_Placeholder.jpeg';")
+                .div
+                    h3 #{c[x].name}
+                    p #{c[x].title}
+                    p
+                        img.b(src='images/dial_icon.svg', width='13', height='13')
+                        | &nbsp
+                        a(href='tel:' + c[x].phone, target='_blank') Phone (Direct)
+                        span.
+                            &nbsp | &nbsp
+                        img.a(src='images/email_icon.svg', width='20', height='20')
+                        | &nbsp
+                        a(href='mailto:' + c[0].email, target='_blank') Email
+            .company
+                .div
+                    img(src=c[x].companyLogo, alt='Flowers in Chania', width='100', height='80')
+                .div
+                    p
+                        a(href='http://' + c[x].companyDomain, target='_blank') #{c[x].companyName}
+                        span.
+                            &nbsp | city,country
+                    -var n = 0
+                    each val in c[x].industry[n]
+                        b #{c[x].industry[n++]}&nbsp
+                    if (c[x].companyEmployees || c[x].companyRevenue)
+                        if (c[x].companyEmployees && c[x].companyRevenue)
+                            p #{c[x].companyEmployees} Employees | Revenue #{c[0].companyRevenue}
+                        else if  (c[x].companyEmployees)
+                            p #{c[x].companyEmployees} Employees
+                        else if (c[x].companyRevenue)
+                            p Revenue #{c[x].companyRevenue}
+            .div.a
+                p #{c[x].lastUpdatedDate}
+    -}
 
 
 
