@@ -5,7 +5,7 @@ var request = require('request');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    request('http://localhost:3000/list', function (error, response, body) {
+    request('https://evening-dawn-29014.herokuapp.com/list', function (error, response, body) {
         var c= JSON.parse(body);
         res.render('index', {
             c: c
