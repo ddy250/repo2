@@ -6,7 +6,7 @@ block content
         .row
             .person
                 .div
-                    img(src=c[x].profileImageURL, width='100', height='100', alt='Image not found', onerror="this.src='images/person_Placeholder.jpeg';")
+                    img#img1(src=c[x].profileImageURL, width='100', height='100', onerror="this.src='images/person_Placeholder.jpeg';")
                 .div
                     h3 #{c[x].name}
                     p #{c[x].title}
@@ -21,7 +21,7 @@ block content
                         a(href='mailto:' + c[0].email, target='_blank') Email
             .company
                 .div
-                    img(src=c[x].companyLogo, alt='Flowers in Chania', width='100', height='80')
+                    img#img2(src=c[x].companyLogo, width='100', height='80', onerror="this.src='images/company_Placeholder.png';")
                 .div
                     p
                         a(href='http://' + c[x].companyDomain, target='_blank') #{c[x].companyName}
